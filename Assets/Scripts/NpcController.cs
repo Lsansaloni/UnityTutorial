@@ -43,5 +43,12 @@ public class NpcControler : MonoBehaviour
     void Tick()
     {
         agent.destination = waypoints[index].position;
+        agent.speed = agentspeed / 2;
+
+        if(player != null && Vector3.Distance(transform.position, player.position) < aggroRange)
+        {
+            agent.destination = player.position;
+            agent.speed = agentspeed;
+        }
     }
 }
