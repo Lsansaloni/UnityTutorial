@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class NpcControler : MonoBehaviour
+public class NpcController : MonoBehaviour
 {
     public float patrolTime = 10f;
     public float aggroRange = 10f;
@@ -18,10 +18,10 @@ public class NpcControler : MonoBehaviour
 
     private void Awake()
     {
-      //  anim = GetComponent<Animator>();
+        //  anim = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
 
-        if( agent != null)
+        if (agent != null)
         {
             agentspeed = agent.speed;
         }
@@ -30,7 +30,7 @@ public class NpcControler : MonoBehaviour
         index = Random.Range(0, waypoints.Length);
 
         InvokeRepeating("Tick", 0, 0.5f);
-        if(waypoints.Length > 0)
+        if (waypoints.Length > 0)
         {
             InvokeRepeating("Patrol", 0, patrolTime);
         }
@@ -45,7 +45,7 @@ public class NpcControler : MonoBehaviour
         agent.destination = waypoints[index].position;
         agent.speed = agentspeed / 2;
 
-        if(player != null && Vector3.Distance(transform.position, player.position) < aggroRange)
+        if (player != null && Vector3.Distance(transform.position, player.position) < aggroRange)
         {
             agent.destination = player.position;
             agent.speed = agentspeed;
