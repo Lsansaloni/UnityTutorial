@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/textSecene.unity
+    guid: 628e57f6d6639a843bedad128fc7c659
+  - enabled: 1
+    path: Assets/Scenes/Bridege.unity
+    guid: 4b5e925d7c0d9e14fb1c93725139ede9
+  - enabled: 1
+    path: Assets/Scenes/SampleScene.unity
+    guid: f51787d462e062c46acb9e12d935a9be
   m_configObjects: {}
